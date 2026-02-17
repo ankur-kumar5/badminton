@@ -1,7 +1,6 @@
 <div class="page-container">
   <h1 class="page-title">Matches</h1>
 
-  <!-- Record Match Form -->
   <div class="card">
     <h2 class="card-title">Record New Match</h2>
 
@@ -11,6 +10,7 @@
         <%= select_tag "match[winner_id]",
               options_from_collection_for_select(Player.all, :id, :name),
               prompt: "Select Winner",
+              required: true,
               class: "input-field" %>
       </div>
 
@@ -19,6 +19,7 @@
         <%= select_tag "match[loser_id]",
               options_from_collection_for_select(Player.all, :id, :name),
               prompt: "Select Loser",
+              required: true,
               class: "input-field" %>
       </div>
 

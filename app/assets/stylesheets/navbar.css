@@ -15,9 +15,11 @@
   height: 60px;
 }
 
-.navbar-brand {
+.navbar-brand, .navbar-logo {
   font-weight: 600;
   font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .navbar-links {

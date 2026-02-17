@@ -18,15 +18,4 @@ class PlayerStats
   def losses
     @player.respond_to?(:losses_count) ? @player.losses_count : @player.lost_matches.size
   end
-
-  def win_percentage
-    return 0 if total_matches.zero?
-    (wins.to_f / total_matches * 100).round(2)
-  end
-
-  private
-
-  def total_matches
-    wins + losses
-  end
 end

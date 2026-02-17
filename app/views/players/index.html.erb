@@ -1,20 +1,18 @@
 <div class="page-container">
   <h1 class="page-title">Players</h1>
 
-  <!-- Add Player Form -->
   <div class="card">
     <h2 class="card-title">Add New Player</h2>
 
     <%= form_with model: Player.new, local: true, class: "form-inline" do |f| %>
       <div class="form-group">
-        <%= f.text_field :name, placeholder: "Enter player name", class: "input-field" %>
+        <%= f.text_field :name, placeholder: "Enter player name", class: "input-field", required: true %>
       </div>
-
+      &nbsp;&nbsp;
       <%= f.submit "Add Player", class: "btn-primary" %>
     <% end %>
   </div>
 
-  <!-- Players Table -->
   <div class="card">
     <h2 class="card-title">All Players</h2>
 
@@ -35,7 +33,7 @@
             <td><%= player.wins %></td>
             <td><%= player.losses %></td>
             <td>
-              <%= link_to "Remove", player_path(player.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-danger" %>
+              <%= link_to "Remove", player_path(player.id), data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") }, class: "btn-danger" %>
             </td>
           </tr>
         <% end %>
