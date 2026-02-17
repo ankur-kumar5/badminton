@@ -38,3 +38,6 @@ en:
     create:
       success: "Player created successfully"
       failure: "Failed to create player - %{error}"
+    destroy:
+      success: "Player deleted successfully"
+      failure: "Failed to delete player - %{error}"  

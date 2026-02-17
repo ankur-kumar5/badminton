@@ -20,8 +20,11 @@ class PlayersController < ApplicationController
 
   def destroy
     player = Player.find(params[:id])
-    player.destroy
-    redirect_to players_path
+    if player.destroy
+      redirect_to players_path, notice: I18n.t("players.destroy.success")
+    else
+      redirect_to players_path, alert: I18n.t("players.destroy.failure", error: player.errors.full_messages.to_sentence)
+    end
   end
 
   private

@@ -35,7 +35,7 @@
             <td><%= player.wins %></td>
             <td><%= player.losses %></td>
             <td>
-              <%= link_to "Remove", player_path(player), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-danger" %>
+              <%= link_to "Remove", player_path(player.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-danger" %>
             </td>
           </tr>
         <% end %>
