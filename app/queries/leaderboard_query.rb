@@ -6,6 +6,7 @@ class LeaderboardQuery
   def call
     @scope
       .left_joins(:won_matches)
+      .includes(:won_matches, :lost_matches)
       .select("players.*, COUNT(matches.id) AS wins_count")
       .group("players.id")
       .order("wins_count DESC")

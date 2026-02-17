@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
   def index
-    players = Player.order(:name)
+    players = Player.includes(:won_matches, :lost_matches)
+                    .order(:name)
                     .paginate(page: params[:page], per_page: 10)
 
     @players = players.map { |p| PlayerStats.new(p) }

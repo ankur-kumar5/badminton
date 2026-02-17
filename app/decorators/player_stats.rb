@@ -12,11 +12,11 @@ class PlayerStats
   end
 
   def wins
-    @player.respond_to?(:wins_count) ? @player.wins_count : @player.won_matches.count
+     @player.won_matches.size
   end
 
   def losses
-    @player.respond_to?(:losses_count) ? @player.losses_count : @player.lost_matches.count
+    @player.respond_to?(:losses_count) ? @player.losses_count : @player.lost_matches.size
   end
 
   def win_percentage
