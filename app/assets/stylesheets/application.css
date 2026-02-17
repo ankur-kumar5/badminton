@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+  background-color: #f4f6f8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.flash {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.flash.notice {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.flash.alert {
+  background-color: #fdecea;
+  color: #c62828;
+}

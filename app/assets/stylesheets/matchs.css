@@ -1,0 +1,31 @@
+/* Form grid layout for matches */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+/* Text colors */
+
+.text-success {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+.text-danger {
+  color: #c0392b;
+  font-weight: 500;
+}
+
+/* Empty state */
+
+.empty-state {
+  text-align: center;
+  color: #888;
+  padding: 15px;
+}
