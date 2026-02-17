@@ -1,6 +1,10 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.all.map { |p| PlayerStats.new(p) }
+    players = Player.order(:name)
+                    .paginate(page: params[:page], per_page: 10)
+
+    @players = players.map { |p| PlayerStats.new(p) }
+    @paginated_players = players
   end
 
   def create

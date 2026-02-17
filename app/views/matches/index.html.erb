@@ -52,6 +52,9 @@
           <% end %>
         </tbody>
       </table>
+      <div class="pagination-container">
+        <%= will_paginate @matches %>
+       </div>
     <% else %>
       <p class="empty-state">No matches recorded yet.</p>
     <% end %>
