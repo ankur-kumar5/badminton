@@ -8,16 +8,18 @@ module Matches
     end
 
     def call
-      match = Match.new(
-        winner_id: @winner_id,
-        loser_id:  @loser_id
-      )
+      ActiveRecord::Base.transaction do
+        match = Match.new(
+          winner_id: @winner_id,
+          loser_id:  @loser_id
+        )
 
-      if match.save
-        Result.new(true, match, [])
-      else
-        Result.new(false, nil, match.errors.full_messages)
-      end
+        if match.save
+          Result.new(true, match, [])
+        else
+          Result.new(false, nil, match.errors.full_messages)
+        end
+     end
     end
   end
 end
