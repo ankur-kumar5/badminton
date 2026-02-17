@@ -1,2 +1,45 @@
-<h1>Players#index</h1>
-<p>Find me in app/views/players/index.html.erb</p>
+<div class="page-container">
+  <h1 class="page-title">Players</h1>
+
+  <!-- Add Player Form -->
+  <div class="card">
+    <h2 class="card-title">Add New Player</h2>
+
+    <%= form_with model: Player.new, local: true, class: "form-inline" do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, placeholder: "Enter player name", class: "input-field" %>
+      </div>
+
+      <%= f.submit "Add Player", class: "btn-primary" %>
+    <% end %>
+  </div>
+
+  <!-- Players Table -->
+  <div class="card">
+    <h2 class="card-title">All Players</h2>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @players.each do |player| %>
+          <tr>
+            <td><%= player.name %></td>
+            <td><%= player.wins %></td>
+            <td><%= player.losses %></td>
+            <td>
+              <%= link_to "Remove", player_path(player), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
