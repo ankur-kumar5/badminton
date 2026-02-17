@@ -31,3 +31,10 @@ en:
   hello: "Hello world"
   matches:
     different_player: "Winner and loser must be different"
+    recorded:
+      success: "Match recorded successfully"
+      failure: "Failed to record match - %{error}"
+  players:
+    create:
+      success: "Player created successfully"
+      failure: "Failed to create player - %{error}"
