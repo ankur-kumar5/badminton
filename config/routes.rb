@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "players#index"
+  root "leaderboard#index"
+
+  resources :leaderboard, only: [:index]
   resources :players, only: %i[index create destroy]
   resources :matches, only: %i[index create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
